@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FFA Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+
+  </head>
+
+<style type="text/css">
+  #taxable { display:none; }
+  #ira { display:none; }
+  #trust { display:none; }
+  #entity { display:none; }
+ 
+  #acctListing2 { display:none; }
+  #acctListing3 { display:none; }
+  #acctListing4 { display:none; }
+  h1,h2,h3 {font-family: Calibri;
+  color: #24408E; }
+  hr{border-top: dotted 5px;
+  color: #8EB562;}
+
+</style>
+<body>
+<div class="container form-group">
+
+<form method="POST" action="">
+<div class="row tab-pane" data-value="General Information" id="tab-1589-3">
+<div class="col">
+<h1>General Information</h1>
+<hr>
+<label class="form-check-label" for="clientName">Client Name</label>
+<br /><input id="clientName" name="clientName"type="text" class="form-control" value="" required />
+<br />
+<p>Advisor Information:
+<br /><label class="form-check-label" for="cp_advisor_firm">Firm</label>
+<input id="cp_advisor_firm" name="cp_advisor_firm" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="cp_advisor">Advisor(s)</label>
+<input id="cp_advisor" name="cp_advisor" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="cp_advisor_phone">Phone</label>
+<input id="cp_advisor_phone" name="cp_advisor_phone" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="clientEmail">Email</label>
+<input id="clientEmail" name="clientEmail" type="text" class="form-control" value="" required /></p>
+</div>
+</div>
+
+<div class="row tab-pane" data-value="General Questions" id="tab-1589-3">
+<div class="col">
+<p><br /><label class="form-check-label" for="cp_net_worth">1) What is the estimated net worth / net assets?</label>
+<input id="cp_net_worth" type="number" class="form-control" value="0" min="-1e+08" max="1e+08"/></p>
+                
+<p><label class="form-check-label" for="cp_inv_assets">2) What is the total value of investment assets (see definition in disclosures)?</label>
+<input id="cp_inv_assets" name="cp_inv_assets" type="number" class="form-control" value="0" min="0" max="1e+08"/></p>
+                
+<p><label class="form-check-label" for="cp_ffa_assets">3) What is the total value of assets being placed in Forefont's Risk Managed Allocation Models?</label>
+<input id="cp_ffa_assets" name="cp_ffa_assets" type="number" class="form-control" value="0" min="0" max="1e+08"/></p>
+
+<p><label class="form-check-label" class="control-label" for="cp_levered_etfs">4) Is there any aversion to investing in Leveraged Exchange Traded Funds?</label>
+<br /><label class="form-check-label">
+ <input type="radio"  name="cp_levered_etfs" value="Yes"/>
+ <span>Yes</span>
+ </label>
+                    
+ <label class="form-check-label">
+ <input type="radio"  name="cp_levered_etfs" value="No"/>
+ <span>No</span>
+ </label></p>
+                    
+<p>
+<label class="form-check-label" class="control-label" for="cp_private_funds">5) Is there any aversion to investing in private funds including hedge funds?</label>
+<br /><label class="form-check-label">
+<input type="radio"  name="cp_private_funds" value="Yes"/>
+<span>Yes</span>
+</label>
+
+<label class="form-check-label">
+<input type="radio"  name="cp_private_funds" value="No"/>
+<span>No</span>
+</label></p>
+
+<p><label class="form-check-label" class="control-label" for="cp_other_restrict">6) Are there any other restrictions on the management of this account? (e.g., no tobacco, nuclear, defense, or chemical investments.</label>
+<br /><label class="form-check-label">
+<input type="radio"  name="cp_other_restrict" value="Yes"/>
+<span>Yes</span>
+</label>
+
+<label class="form-check-label">
+<input type="radio"  name="cp_other_restrict" value="No"/>
+<span>No</span>
+</label>
+<br /><span class="help-block">Leave blank if there are no additional restrictions.</span>
+<label class="form-check-label" for="cp_other_restrict"></label>
+<input id="cp_other_restrict" name="cp_other_restrict" type="text" class="form-control" value=""/></p>
+
+<p><label class="form-check-label">7) Please indicate the method(s) used to asses Investment Objectives and Risk Tolerance.</label>
+<br /><label class="form-check-label">
+<input type="checkbox" name="cp_risk_tol_method" value="Questionnaire"/>
+<span>Questionnaire</span>
+</label>
+
+<br /><label class="form-check-label">
+<input type="checkbox" name="cp_risk_tol_method" value="Financial Plan"/>
+<span>Financial Plan</span>
+</label>
+
+<br /><label class="form-check-label">
+<input type="checkbox" name="cp_risk_tol_method" value="Assessment of Prior Portfolios"/>
+<span>Assessment of Prior Portfolios</span>
+</label>
+
+<br /><label class="form-check-label">
+<input type="checkbox" name="cp_risk_tol_method" value="Other"/>
+<span>Other</span>
+</label>
+
+<br /><label class="form-check-label">
+<input type="checkbox" name="cp_risk_tol_method" value="No Assessment"/>
+<span>No Assessment</span>
+</label></p>
+
+
+<p><label class="form-check-label">8) If applicable, was any decision to rollover a 401k into an IRA reviewed to take into considerations the following (including but not limited to): (a) Individual need and circumstance, (b) Available investment options, (c) Investment related expenses, and (d) Plan or account fees.</label>
+<label class="form-check-label">
+<input type="radio"  name="cp_rollover" value="Yes"/>
+<span>Yes</span>
+</label>
+
+<label class="form-check-label">
+<input type="radio"  name="cp_rollover" value="No"/>
+<span>No</span>
+</label>
+
+<label class="form-check-label">
+<input type="radio"  name="cp_rollover" value="N/A"/>
+<span>N/A</span>
+</label></p>
+
+
+<p><label class="form-check-label">9) Have the liquidity differences between the Non-QP and QP models been reviewed?</label>
+<br /><label class="form-check-label">
+<input type="radio" name="cp_liq_review" value="Yes"/>
+<span>Yes</span>
+</label>
+
+<label class="form-check-label">
+<input type="radio" name="cp_liq_review" value="No"/>
+<span>No</span>
+</label></p>
+</div>	
+</div>
+
+<div class="row tab-pane" data-value="Account Listings" id="acctListing1">
+<div class="col">
+<h1>Account Listing</h1>
+<hr>
+<p><label class="form-check-label" for="cp_sel_acct_title">Account Title</label>
+<br /><input id="cp_sel_acct_title" name="cp_sel_acct_title" type="text" class="form-control" value=""/></p>
+
+<p><label class="form-check-label" for="cp_sel_account_type">Select Account Type</label>
+<br /><select id="cp_sel_account_type" name="cp_sel_account_type">
+<option value="" selected>Select</option>
+<option value="taxable">Brokerage</option>
+<option value="ira">Traditional/Roth IRA</option>
+<option value="trust">Trust</option>
+<option value="entity">Entity</option><</select></p>
+ 
+<p> <label class="form-check-label" for="cp_sel_account_value">Account Value</label>
+ <br /><input id="cp_sel_account_value" name="cp_sel_account_value" type="number" class="form-control" value="NA" min="0" max="1e+08"/></p>
+ 
+ <p><label class="form-check-label" for="cp_sel_model_style">Model/Strategy/ Fund</label>
+ <br /><select id="cp_sel_model_style" name="cp_sel_model_style">
+<option value="">Select</option>
+<option value="Dynamic Growth 7% Vol QP">Dynamic Growth 7% Vol QP</option>
+<option value="Dynamic Growth 10% Vol QP">Dynamic Growth 10% Vol QP</option>
+<option value="Dynamic Growth 12% Vol QP">Dynamic Growth 12% Vol QP</option>
+<option value="Dynamic Growth 7% Vol Non-QP">Dynamic Growth 7% Vol Non-QP</option>
+<option value="Dynamic Growth 10% Vol Non-QP">Dynamic Growth 10% Vol Non-QP</option>
+<option value="Dynamic Growth 12% Vol Non-QP">Dynamic Growth 12% Vol Non-QP</option>
+<option value="Levered Instruments 12.5% Vol">Levered Instruments 12.5% Vol</option>
+<option value="Levered Instruments 10% Vol">Levered Instruments 10% Vol</option>
+<option value="Forefront Impact Dynamic Growth 10% Vol">Forefront Impact Dynamic Growth 10% Vol</option>
+<option value="Global Multi-Asset 7% Vol QP">Global Multi-Asset 7% Vol QP</option>
+<option value="Global Multi-Asset 10% Vol QP">Global Multi-Asset 10% Vol QP</option>
+<option value="Global Multi-Asset 12% Vol QP">Global Multi-Asset 12% Vol QP</option>
+<option value="Global Multi-Asset 7% Vol Non-QP">Global Multi-Asset 7% Vol Non-QP</option>
+<option value="Global Multi-Asset 10% Vol Non-QP">Global Multi-Asset 10% Vol Non-QP</option>
+<option value="Global Multi-Asset 12% Vol Non-QP">Global Multi-Asset 12% Vol Non-QP</option>
+<option value="Risk-Balanced 7% Vol QP">Risk-Balanced 7% Vol QP</option>
+<option value="Risk-Balanced 10% Vol QP">Risk-Balanced 10% Vol QP</option>
+<option value="Risk-Balanced 12% Vol QP">Risk-Balanced 12% Vol QP</option>
+<option value="Risk-Balanced 7% Vol Non-QP">Risk-Balanced 7% Vol Non-QP</option>
+<option value="Risk-Balanced 10% Vol Non-QP">Risk-Balanced 10% Vol Non-QP</option>
+<option value="Risk-Balanced 12% Vol Non-QP">Risk-Balanced 12% Vol Non-QP</option>
+<option value="US Concentrated 8% Vol">US Concentrated 8% Vol</option>
+<option value="US Concentrated 10% Vol">US Concentrated 10% Vol</option>
+<option value="Forefront Select Fund">Forefront Select Fund</option>
+<option value="Forefront Dynamic Strategies Fund">Forefront Dynamic Strategies Fund</option>
+<option value="Forefront Liquid Alternatives Strategy">Forefront Liquid Alternatives Strategy</option>
+<option value="Forefront Impact Resiliency Strategy">Forefront Impact Resiliency Strategy</option></select></p>
+
+
+<p><label class="form-check-label" for="cp_strategy_fee">Strategy Fee</label>
+<br /><input id="cp_strategy_fee" name="cp_strategy_fee" type="number" class="form-control" value="NA" min="0" max="1000" readonly /></p>
+<p><label class="form-check-label" for="cp_sel_advisor_fee">Enter Advisor Fee in bps</label>
+<br /><input id="cp_sel_advisor_fee" name="cp_sel_advisor_fee" type="number" class="form-control" value="NA" min="0" max="1000"/></p>
+<p><label class="form-check-label" for="cp_overlay_manager_fee">Overlay Manager Fee</label>
+<br /><input id="cp_overlay_manager_fee" name="cp_overlay_manager_fee" type="number" class="form-control" value="NA" min="0" max="1000" readonly /></p>
+<p><input class="btn btn-success" id='addAcctList2' type='button' value='Add Second Account'></p>
+</div>
+</div>
+
+<div class="row tab-pane" data-value="Account Listings" id="acctListing2">
+<div class="col">
+<h1>Second Account Listing</h1>
+<hr>
+<p><label class="form-check-label" for="cp_sel_acct_title2">Account Title</label>
+<br /><input id="cp_sel_acct_title" name="cp_sel_acct_title2" type="text" class="form-control" value=""/></p>
+
+<p><label class="form-check-label" for="cp_sel_account_type2">Select Account Type</label>
+<br /><select id="cp_sel_account_type2" name="cp_sel_account_type">
+<option value="" selected>Select</option>
+<option value="taxable">Brokerage</option>
+<option value="ira">Traditional/Roth IRA</option>
+<option value="trust">Trust</option>
+<option value="entity">Entity</option><</select></p>
+ 
+<p> <label class="form-check-label" for="cp_sel_account_value2">Account Value</label>
+ <br /><input id="cp_sel_account_value2" name="cp_sel_account_value2" type="number" class="form-control" value="NA" min="0" max="1e+08"/></p>
+ 
+<p><label class="form-check-label" for="cp_sel_model_style2">Model/Strategy/ Fund</label>
+ <br /><select id="cp_sel_model_style2" name="cp_sel_model_style2">
+<option value="" selected>Select</option>
+<option value="Global Multi-Asset">Global Multi-Asset</option>
+<option value="Dynamic Growth 7% Vol QP">Dynamic Growth 7% Vol QP</option>
+<option value="Dynamic Growth 10% Vol QP">Dynamic Growth 10% Vol QP</option>
+<option value="Dynamic Growth 12% Vol QP">Dynamic Growth 12% Vol QP</option>
+<option value="Dynamic Growth 7% Vol Non-QP">Dynamic Growth 7% Vol Non-QP</option>
+<option value="Dynamic Growth 10% Vol Non-QP">Dynamic Growth 10% Vol Non-QP</option>
+<option value="Dynamic Growth 12% Vol Non-QP">Dynamic Growth 12% Vol Non-QP</option>
+<option value="Levered Instruments 12.5% Vol">Levered Instruments 12.5% Vol</option>
+<option value="Levered Instruments 10% Vol">Levered Instruments 10% Vol</option>
+<option value="Forefront Impact Dynamic Growth 10% Vol">Forefront Impact Dynamic Growth 10% Vol</option>
+<option value="Global Multi-Asset 7% Vol QP">Global Multi-Asset 7% Vol QP</option>
+<option value="Global Multi-Asset 10% Vol QP">Global Multi-Asset 10% Vol QP</option>
+<option value="Global Multi-Asset 12% Vol QP">Global Multi-Asset 12% Vol QP</option>
+<option value="Global Multi-Asset 7% Vol Non-QP">Global Multi-Asset 7% Vol Non-QP</option>
+<option value="Global Multi-Asset 10% Vol Non-QP">Global Multi-Asset 10% Vol Non-QP</option>
+<option value="Global Multi-Asset 12% Vol Non-QP">Global Multi-Asset 12% Vol Non-QP</option>
+<option value="Risk-Balanced 7% Vol QP">Risk-Balanced 7% Vol QP</option>
+<option value="Risk-Balanced 10% Vol QP">Risk-Balanced 10% Vol QP</option>
+<option value="Risk-Balanced 12% Vol QP">Risk-Balanced 12% Vol QP</option>
+<option value="Risk-Balanced 7% Vol Non-QP">Risk-Balanced 7% Vol Non-QP</option>
+<option value="Risk-Balanced 10% Vol Non-QP">Risk-Balanced 10% Vol Non-QP</option>
+<option value="Risk-Balanced 12% Vol Non-QP">Risk-Balanced 12% Vol Non-QP</option>
+<option value="US Concentrated 8% Vol">US Concentrated 8% Vol</option>
+<option value="US Concentrated 10% Vol">US Concentrated 10% Vol</option>
+<option value="Forefront Select Fund">Forefront Select Fund</option>
+<option value="Forefront Dynamic Strategies Fund">Forefront Dynamic Strategies Fund</option>
+<option value="Forefront Liquid Alternatives Strategy">Forefront Liquid Alternatives Strategy</option>
+<option value="Forefront Impact Resiliency Strategy">Forefront Impact Resiliency Strategy</option></select></p>
+
+<p><label class="form-check-label" for="cp_strategy_fee2">Strategy Fee</label>
+<br /><input id="cp_strategy_fee2" name="cp_strategy_fee2" type="number" class="form-control" value="NA" min="0" max="1000" readonly /></p>
+<p><label class="form-check-label" for="cp_sel_advisor_fee2">Enter Advisor Fee in bps</label>
+<br /><input id="cp_sel_advisor_fee2" name="cp_sel_advisor_fee2" type="number" class="form-control" value="NA" min="0" max="1000" /></p>
+<p><label class="form-check-label" for="cp_overlay_manager_fee2">Overlay Manager Fee</label>
+<br /><input id="cp_overlay_manager_fee2" name="cp_overlay_manager_fee2" type="number" class="form-control" value="NA" min="0" max="1000"readonly /></p>
+
+<p><input class="btn btn-success" id='addAcctList3' type='button' value='Add Third Account'></p>
+</div>
+</div>
+<div class="row tab-pane" data-value="Third Account Listings" id="acctListing3">
+<div class="col">
+<h1>Third Account Listing</h1>
+<hr>
+<p><label class="form-check-label" for="cp_sel_acct_title3">Account Title</label>
+<br /><input id="cp_sel_acct_title3" name="cp_sel_acct_title3" type="text" class="form-control" value=""/></p>
+
+<p><label class="form-check-label" for="cp_sel_account_type3">Select Account Type</label>
+<br /><select id="cp_sel_account_type3" name="cp_sel_account_type">
+<option value="" selected>Select</option>
+<option value="taxable">Brokerage</option>
+<option value="ira">Traditional/Roth IRA</option>
+<option value="trust">Trust</option>
+<option value="entity">Entity</option><</select></p>
+ 
+<p> <label class="form-check-label" for="cp_sel_account_value3">Account Value</label>
+ <br /><input id="cp_sel_account_value3" name="cp_sel_account_value3" type="number" class="form-control" value="NA" min="0" max="1e+08"/></p>
+ 
+<p><label class="form-check-label" for="cp_sel_model_style3">Model/Strategy/ Fund</label>
+ <br /><select id="cp_sel_model_style3" name="cp_sel_model_style3">
+<option value="">Select</option>
+<option value="Dynamic Growth 7% Vol QP">Dynamic Growth 7% Vol QP</option>
+<option value="Dynamic Growth 10% Vol QP">Dynamic Growth 10% Vol QP</option>
+<option value="Dynamic Growth 12% Vol QP">Dynamic Growth 12% Vol QP</option>
+<option value="Dynamic Growth 7% Vol Non-QP">Dynamic Growth 7% Vol Non-QP</option>
+<option value="Dynamic Growth 10% Vol Non-QP">Dynamic Growth 10% Vol Non-QP</option>
+<option value="Dynamic Growth 12% Vol Non-QP">Dynamic Growth 12% Vol Non-QP</option>
+<option value="Levered Instruments 12.5% Vol">Levered Instruments 12.5% Vol</option>
+<option value="Levered Instruments 10% Vol">Levered Instruments 10% Vol</option>
+<option value="Forefront Impact Dynamic Growth 10% Vol">Forefront Impact Dynamic Growth 10% Vol</option>
+<option value="Global Multi-Asset 7% Vol QP">Global Multi-Asset 7% Vol QP</option>
+<option value="Global Multi-Asset 10% Vol QP">Global Multi-Asset 10% Vol QP</option>
+<option value="Global Multi-Asset 12% Vol QP">Global Multi-Asset 12% Vol QP</option>
+<option value="Global Multi-Asset 7% Vol Non-QP">Global Multi-Asset 7% Vol Non-QP</option>
+<option value="Global Multi-Asset 10% Vol Non-QP">Global Multi-Asset 10% Vol Non-QP</option>
+<option value="Global Multi-Asset 12% Vol Non-QP">Global Multi-Asset 12% Vol Non-QP</option>
+<option value="Risk-Balanced 7% Vol QP">Risk-Balanced 7% Vol QP</option>
+<option value="Risk-Balanced 10% Vol QP">Risk-Balanced 10% Vol QP</option>
+<option value="Risk-Balanced 12% Vol QP">Risk-Balanced 12% Vol QP</option>
+<option value="Risk-Balanced 7% Vol Non-QP">Risk-Balanced 7% Vol Non-QP</option>
+<option value="Risk-Balanced 10% Vol Non-QP">Risk-Balanced 10% Vol Non-QP</option>
+<option value="Risk-Balanced 12% Vol Non-QP">Risk-Balanced 12% Vol Non-QP</option>
+<option value="US Concentrated 8% Vol">US Concentrated 8% Vol</option>
+<option value="US Concentrated 10% Vol">US Concentrated 10% Vol</option>
+<option value="Forefront Select Fund">Forefront Select Fund</option>
+<option value="Forefront Dynamic Strategies Fund">Forefront Dynamic Strategies Fund</option>
+<option value="Forefront Liquid Alternatives Strategy">Forefront Liquid Alternatives Strategy</option>
+<option value="Forefront Impact Resiliency Strategy">Forefront Impact Resiliency Strategy</option></select></p>
+
+<p><label class="form-check-label" for="cp_strategy_fee3">Strategy Fee</label>
+<br /><input id="cp_strategy_fee3"3 name="cp_strategy_fee3" type="number" class="form-control" value="NA" min="0" max="1000" readonly /></p>
+<p><label class="form-check-label" for="cp_sel_advisor_fee3">Enter Advisor Fee in bps</label>
+<br /><input id="cp_sel_advisor_fee3" name="cp_sel_advisor_fee3" type="number" class="form-control" value="NA" min="0" max="1000" /></p>
+<p><label class="form-check-label" for="cp_overlay_manager_fee3">Overlay Manager Fee</label>
+<br /><input id="cp_overlay_manager_fee3" name="cp_overlay_manager_fee3" type="number" class="form-control" value="NA" min="0" max="1000"readonly /></p>
+
+<p><input class="btn btn-success" id='addAcctList4' type='button' value='Add Fourth Account'></p>
+</div>
+</div>
+
+<div class="row tab-pane" data-value="Fourth Account Listings" id="acctListing4">
+<div class="col">
+<h1>Fourth Account Listing</h1>
+<hr>
+<p><label class="form-check-label" for="cp_sel_acct_title4">Account Title</label>
+<br /><input id="cp_sel_acct_title4" name="cp_sel_acct_title4" type="text" class="form-control" value=""/></p>
+
+<p><label class="form-check-label" for="cp_sel_account_type4">Select Account Type</label>
+<br /><select id="cp_sel_account_type4" name="cp_sel_account_type">
+<option value="" selected>Select</option>
+<option value="taxable">Brokerage</option>
+<option value="ira">Traditional/Roth IRA</option>
+<option value="trust">Trust</option>
+<option value="entity">Entity</option><</select></p>
+ 
+<p> <label class="form-check-label" for="cp_sel_account_value4">Account Value</label>
+ <br /><input id="cp_sel_account_value4" name="cp_sel_account_value4" type="number" class="form-control" value="NA" min="0" max="1e+08"/></p>
+ 
+<p><label class="form-check-label" for="cp_sel_model_style4">Model/Strategy/ Fund</label>
+ <br /><select id="cp_sel_model_style4" name="cp_sel_model_style4">
+<option value="">Select</option>
+<option value="Dynamic Growth 7% Vol QP">Dynamic Growth 7% Vol QP</option>
+<option value="Dynamic Growth 10% Vol QP">Dynamic Growth 10% Vol QP</option>
+<option value="Dynamic Growth 12% Vol QP">Dynamic Growth 12% Vol QP</option>
+<option value="Dynamic Growth 7% Vol Non-QP">Dynamic Growth 7% Vol Non-QP</option>
+<option value="Dynamic Growth 10% Vol Non-QP">Dynamic Growth 10% Vol Non-QP</option>
+<option value="Dynamic Growth 12% Vol Non-QP">Dynamic Growth 12% Vol Non-QP</option>
+<option value="Levered Instruments 12.5% Vol">Levered Instruments 12.5% Vol</option>
+<option value="Levered Instruments 10% Vol">Levered Instruments 10% Vol</option>
+<option value="Forefront Impact Dynamic Growth 10% Vol">Forefront Impact Dynamic Growth 10% Vol</option>
+<option value="Global Multi-Asset 7% Vol QP">Global Multi-Asset 7% Vol QP</option>
+<option value="Global Multi-Asset 10% Vol QP">Global Multi-Asset 10% Vol QP</option>
+<option value="Global Multi-Asset 12% Vol QP">Global Multi-Asset 12% Vol QP</option>
+<option value="Global Multi-Asset 7% Vol Non-QP">Global Multi-Asset 7% Vol Non-QP</option>
+<option value="Global Multi-Asset 10% Vol Non-QP">Global Multi-Asset 10% Vol Non-QP</option>
+<option value="Global Multi-Asset 12% Vol Non-QP">Global Multi-Asset 12% Vol Non-QP</option>
+<option value="Risk-Balanced 7% Vol QP">Risk-Balanced 7% Vol QP</option>
+<option value="Risk-Balanced 10% Vol QP">Risk-Balanced 10% Vol QP</option>
+<option value="Risk-Balanced 12% Vol QP">Risk-Balanced 12% Vol QP</option>
+<option value="Risk-Balanced 7% Vol Non-QP">Risk-Balanced 7% Vol Non-QP</option>
+<option value="Risk-Balanced 10% Vol Non-QP">Risk-Balanced 10% Vol Non-QP</option>
+<option value="Risk-Balanced 12% Vol Non-QP">Risk-Balanced 12% Vol Non-QP</option>
+<option value="US Concentrated 8% Vol">US Concentrated 8% Vol</option>
+<option value="US Concentrated 10% Vol">US Concentrated 10% Vol</option>
+<option value="Forefront Select Fund">Forefront Select Fund</option>
+<option value="Forefront Dynamic Strategies Fund">Forefront Dynamic Strategies Fund</option>
+<option value="Forefront Liquid Alternatives Strategy">Forefront Liquid Alternatives Strategy</option>
+<option value="Forefront Impact Resiliency Strategy">Forefront Impact Resiliency Strategy</option></select></p>
+
+<p><label class="form-check-label" for="cp_strategy_fee4">Strategy Fee</label>
+<br /><input id="cp_strategy_fee4" name="cp_strategy_fee4" type="number" class="form-control" value="NA" min="0" max="1000"readonly /></p>
+<p><label class="form-check-label" for="cp_sel_advisor_fee4">Enter Advisor Fee in bps</label>
+<br /><input id="cp_sel_advisor_fee4" name="cp_sel_advisor_fee4" type="number" class="form-control" value="NA" min="0" max="1000" /></p>
+<p><label class="form-check-label" for="cp_overlay_manager_fee4">Overlay Manager Fee</label>
+<br /><input id="cp_overlay_manager_fee4" name="cp_overlay_manager_fee4" type="number" class="form-control" value="NA" min="0" max="1000"readonly /></p>
+
+
+</div>
+</div>
+
+<div class="row" id="taxable">
+<div class="col">
+<p><label class="form-check-label" class="control-label" for="taxable_account_info"><h1>Taxable: Account Owner Information</h1> (Fill out each section that applies)</label>
+ <hr>
+ <br /><label class="form-check-label">
+ <input type="radio"  name="taxable_account_info" value="Individual"/>
+ <span>Individual</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="taxable_account_info" value="Joint-TIC"/>
+ <span>Joint-TIC</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="taxable_account_info" value="Joint-TBE"/>
+ <span>Joint-TBE</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="taxable_account_info" value="Joint-TWROS"/>
+ <span>Joint-TWROS</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="taxable_account_info" value="Custodian"/>
+ <span>Custodian for Minor</span>
+ </label></p>
+<p> <label class="form-check-label" for="ownerName">Name (Individual/ Trustee/ Joint Account/ Co-Trustee)</label>
+<input id="ownerName" name="ownerName"type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxId">TaxID</label>
+<input id="taxId" name="taxId" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxAddress">Address</label>
+<input id="taxAddress" name="taxAddress" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxDOB">Date of Birth</label>
+<input id="taxDOB" name="taxDOB" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxCityStateZip">City, State, Zip</label>
+<input id="taxCityStateZip" name="taxCityStateZip" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxPhoneNumber">Phone Number</label>
+<input id="taxPhoneNumber" name="taxPhoneNumber" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxEmail">Email</label>
+<input id="taxEmail" name="taxEmail" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxOccupation">Occupation</label>
+<input id="taxOccupation" name="taxOccupation" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxEmployer">Employer</label>
+<input id="taxEmployer" name="taxEmployer" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="taxEmpAddress">Employer Address</label>
+<input id="taxEmpAddress" name="taxEmpAddress" type="text" class="form-control" value=""/>
+ </p>
+
+<p><input class="btn btn-success" id='addTaxable2' type='button' value='Add Second Taxable'></p> 
+</div>
+</div>
+
+
+<div id="ira"> 
+<label class="form-check-label" class="control-label" for="ira_account_info"><h1>IRA: Account Owner Information</h1> (Fill out each section that applies)</h1></label>
+<hr>
+<div class="row d-flex align-items-end">
+<div class="col-4 order-12">
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="Traditional"/>
+ <span>Traditional IRA</span>
+ </label>
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="Roth"/>
+ <span>Roth IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="Rollover"/>
+ <span>Rollover IRA</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="SEP"/>
+ <span>SEP IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="Beneficiary"/>
+ <span>Beneficiary IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info" value="Other"/>
+ <span>Other</span>
+ </label>
+  </div>
+ <div class="col-8 order-1">
+ <label class="form-check-label" for="ownerName">Name</label>
+<input id="ownerName" name="ownerName"type="text" class="form-control" value=""/>
+ </div>
+ </div>
+ <div class="row d-flex align-items-end">
+  <div class="col-4 order-12">
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="Traditional"/>
+ <span>Traditional IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="Roth"/>
+ <span>Roth IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="Rollover"/>
+ <span>Rollover IRA</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="SEP"/>
+ <span>SEP IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="Beneficiary"/>
+ <span>Beneficiary IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info2" value="Other"/>
+ <span>Other</span>
+ </label>
+ </div>
+ <div class="col-8 order-1">
+ <label class="form-check-label" for="ownerName2">Name</label>
+<input id="ownerName" name="ownerName2"type="text" class="form-control" value=""/>
+</div>
+</div>
+<div class="row d-flex align-items-end">
+ <div class="col-4 order-12 align-items-end">
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="Traditional"/>
+ <span>Traditional IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="Roth"/>
+ <span>Roth IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="Rollover"/>
+ <span>Rollover IRA</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="SEP"/>
+ <span>SEP IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="Beneficiary"/>
+ <span>Beneficiary IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info3" value="Other"/>
+ <span>Other</span>
+ </label>
+ </div>
+<div class="col-8 order-1">
+<label class="form-check-label" for="ownerName3">Name</label>
+<input id="ownerName" name="ownerName3"type="text" class="form-control" value=""/>
+</div>
+</div>
+<div class="row d-flex align-items-end">
+<div class="col-4 order-12">
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="Traditional"/>
+ <span>Traditional IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="Roth"/>
+ <span>Roth IRA</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="Rollover"/>
+ <span>Rollover IRA</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="SEP"/>
+ <span>SEP IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="Beneficiary"/>
+ <span>Beneficiary IRA</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="ira_account_info4" value="Other"/>
+ <span>Other</span>
+ </label>
+ </div>
+ <div class="col-8 order-1">
+ <label class="form-check-label" for="ownerName4">Name</label>
+<input id="ownerName" name="ownerName4"type="text" class="form-control" value=""/>
+ </div>
+ </div>
+ </div> <!--- ira container  -->
+
+ 
+ 
+ 
+<div class="row" id="entity"> 
+<div class="col">
+ <p><label class="form-check-label" class="control-label" for="entity_account_info"><h1>Entity: Account Owner Information</h1> (Fill out each section that applies)</label>
+ <hr>
+ <br /><label class="form-check-label">
+ <input type="radio"  name="entity_account_info" value="C-Corporation"/>
+ <span>C-Corporation</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="entity_account_info" value="S-Corporation"/>
+ <span>S-Corporation</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="entity_account_info" value="Partnership"/>
+ <span>Partnership</span>
+ </label>
+ 
+<label class="form-check-label">
+ <input type="radio"  name="entity_account_info" value="LLC"/>
+ <span>LLC</span>
+ </label>
+
+ <label class="form-check-label">
+ <input type="radio"  name="entity_account_info" value="LP"/>
+ <span>LP</span>
+ </label>
+ <br /><label class="form-check-label" for="entityName"> Entity Name</label>
+<input id="entityName" name="entityName"type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="entityTaxId">TaxID</label>
+<input id="entityTaxId" name="entityTaxId" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="entityAddress">Address</label>
+<input id="entityAddress" name="entityAddress" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="entityCityStateZip">City, State, Zip</label>
+<input id="entityCityStateZip" name="entityCityStateZip" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="entityPhoneNumber">Phone Number</label>
+<input id="entityPhoneNumber" name="entityPhoneNumber" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="contactName">Contact Name</label>
+<input id="contactName" name="contactName" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="entityEmail">Email</label>
+<input id="entityEmail" name="entityEmail" type="text" class="form-control" value=""/>
+ </p>
+ </div>
+ </div> <!--- entity container  -->
+<div class="row" id="trust"> 
+<div class="col">
+ <p><label class="form-check-label" class="control-label" for="trust_account_info"><h1>Trust: Account Owner Information</h1> (Fill out each section that applies)</label>
+ <hr>
+ <br /><label class="form-check-label">
+ <input type="radio"  name="trust_account_info" value="Retirement"/>
+ <span>Retirement Trust</span>
+ </label>
+ 
+ <label class="form-check-label">
+ <input type="radio"  name="trust_account_info" value="Personal"/>
+ <span>Personal Trust</span>
+ </label>
+<br /><label class="form-check-label" for="trustName">Name of Trust</label>
+<input id="trustName" name="trustName"type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="trustTaxId">Trust Tax ID</label>
+<input id="trustTaxId" name="trustTaxId" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="effDOT">Effective Date of Trust</label>
+<input id="effDOT" name="effDOT" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="trustLatest">Latest</label>
+<input id="trustLatest" name="trustLatest" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="trustType">Type of Trust</label>
+<input id="trustType" name="trustType" type="text" class="form-control" value=""/>
+<br /><label class="form-check-label" for="trusteeList">List all Trustees</label>
+<input id="trusteeList" name="trusteeList" type="text" class="form-control" value=""/>
+  </p>
+  </div> 
+  </div>  <!--- trust container  -->
+  <br /><hr>
+<p class="text-center"><button class="btn btn-success" id="submit" type="submit">Submit</button></p>
+</div>
+
+</form>
+</div>
+<script>
+var ffa = {"Dynamic Growth 7% Vol QP":{"stragetyFee": "0.45", "overlayFee": "0.0"},
+"Dynamic Growth 10% Vol QP":{"stragetyFee":"0.65", "overlayFee": "0.0"},
+"Dynamic Growth 12% Vol QP": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Dynamic Growth 7% Vol Non-QP": {"stragetyFee": "0.45", "overlayFee": "0.10"},
+"Dynamic Growth 10% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"Dynamic Growth 12% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"Levered Instruments 12.5% Vol": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Levered Instruments 10% Vol": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Forefront Impact Dynamic Growth 10% Vol": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Global Multi-Asset 7% Vol QP": {"stragetyFee": "0.45", "overlayFee": "0.0"},
+"Global Multi-Asset 10% Vol QP": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Global Multi-Asset 12% Vol QP": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Global Multi-Asset 7% Vol Non-QP": {"stragetyFee": "0.45", "overlayFee": "0.10"},
+"Global Multi-Asset 10% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"Global Multi-Asset 12% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"Risk-Balanced 7% Vol QP": {"stragetyFee": "0.45", "overlayFee": "0.0"},
+"Risk-Balanced 10% Vol QP": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Risk-Balanced 12% Vol QP": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Risk-Balanced 7% Vol Non-QP": {"stragetyFee": "0.45", "overlayFee": "0.10"},
+"Risk-Balanced 10% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"Risk-Balanced 12% Vol Non-QP": {"stragetyFee": "0.65", "overlayFee": "0.10"},
+"US Concentrated 8% Vol": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"US Concentrated 10% Vol": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Forefront Select Fund": {"stragetyFee":"1.00 + 10", "overlayFee": "0.0"},
+"Forefront Dynamic Strategies Fund": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Forefront Liquid Alternatives Strategy": {"stragetyFee": "0.65", "overlayFee": "0.0"},
+"Forefront Impact Resiliency Strategy": {"stragetyFee": "0.45", "overlayFee": "0.0"}};
+
+$("#cp_sel_model_style").change(function(){
+   var strageties = $("#cp_sel_model_style").val();
+   var stragety = ffa[strageties]["stragetyFee"];
+   var overlay = ffa[strageties]["overlayFee"];
+   $("#cp_strategy_fee").val(stragety);
+   $("#cp_overlay_manager_fee").val(overlay);
+});
+$("#cp_sel_model_style2").change(function(){
+   var strageties = $("#cp_sel_model_style2").val();
+   var stragety = ffa[strageties]["stragetyFee"];
+   var overlay = ffa[strageties]["overlayFee"];
+   $("#cp_strategy_fee2").val(stragety);
+   $("#cp_overlay_manager_fee2").val(overlay);
+});
+
+$("#cp_sel_model_style3").change(function(){
+   var strageties = $("#cp_sel_model_style3").val();
+   var stragety = ffa[strageties]["stragetyFee"];
+   var overlay = ffa[strageties]["overlayFee"];
+   $("#cp_strategy_fee3").val(stragety);
+   $("#cp_overlay_manager_fee3").val(overlay);
+});
+
+$("#cp_sel_model_style4").change(function(){
+   var strageties = $("#cp_sel_model_style4").val();
+   var stragety = ffa[strageties]["stragetyFee"];
+   var overlay = ffa[strageties]["overlayFee"];
+   $("#cp_strategy_fee4").val(stragety);
+   $("#cp_overlay_manager_fee4").val(overlay);
+});
+
+$("#cp_sel_account_type").change(function(){
+   $("#"+$(this).val()).show();
+});
+
+$("#cp_sel_account_type2").change(function(){
+   $("#"+$(this).val()).show();
+});
+
+$("#cp_sel_account_type3").change(function(){
+   $("#"+$(this).val()).show();
+});
+
+$("#cp_sel_account_type4").change(function(){
+   $("#"+$(this).val()).show();
+});
+
+
+$("#addAcctList2").click(function(){
+ $("#acctListing2").show();
+});
+
+$("#addAcctList3").click(function(){
+ $("#acctListing3").show();
+});
+
+$("#addAcctList4").click(function(){
+ $("#acctListing4").show();
+});
+
+</script>
+</body>
+</html>

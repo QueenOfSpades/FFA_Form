@@ -1,0 +1,4 @@
+{
+"keyId":"ThisIsASecretKeyId",
+"secretKey":"ThisIsASecretKey"
+}
